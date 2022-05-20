@@ -6,9 +6,9 @@ function Navbar() {
     <div className='navbar-background'>
       <div class="container">
         <ul>
-          <li><a href="">CVBuilder</a></li>
-          <li><a href="">Profile</a></li>
-          <li><a href="">Build a CV</a></li>
+          <li><a href="/">CVBuilder</a></li>
+          <li><a href="/profile">Profile</a></li>
+          <li><a href="/cvbuilder">Build a CV</a></li>
         </ul>
       </div>
     </div>
