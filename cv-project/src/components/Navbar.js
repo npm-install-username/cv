@@ -1,5 +1,5 @@
 import React from 'react'
-
+import '../styles/NavBar.scss'
 
 function Navbar() {
   return (
@@ -7,7 +7,7 @@ function Navbar() {
       <ul>
         <li>CVBuilder</li>
         <li>Profile</li>
-        <li>Build a</li>
+        <li>Build a CV</li>
       </ul>
     </div>
   )
