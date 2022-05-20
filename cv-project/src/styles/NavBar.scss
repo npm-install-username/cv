@@ -1,4 +1,6 @@
+@import 'config';
+
 .navbar-background{
-    background-color: black;
+    background-color: $primary;
     color:white;
 }
