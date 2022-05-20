@@ -2,5 +2,19 @@
 
 .navbar-background{
     background-color: $primary;
+    padding: 10px 0;
     color:white;
+
+    ul {
+        display: flex;
+        li{
+            margin: auto;
+            list-style: none;
+            display: inline;
+            a{
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
 }

@@ -4,11 +4,13 @@ import '../styles/NavBar.scss'
 function Navbar() {
   return (
     <div className='navbar-background'>
-      <ul>
-        <li>CVBuilder</li>
-        <li>Profile</li>
-        <li>Build a CV</li>
-      </ul>
+      <div class="container">
+        <ul>
+          <li><a href="">CVBuilder</a></li>
+          <li><a href="">Profile</a></li>
+          <li><a href="">Build a CV</a></li>
+        </ul>
+      </div>
     </div>
   )
 }
