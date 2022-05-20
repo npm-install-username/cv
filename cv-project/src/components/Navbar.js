@@ -1,8 +1,15 @@
 import React from 'react'
+import './Navbar.css'
 
 function Navbar() {
   return (
-    <div>Navbar</div>
+    <div className='navbar-background'>
+      <ul>
+        <li>CVBuilder</li>
+        <li>Profile</li>
+        <li>Build a</li>
+      </ul>
+    </div>
   )
 }
 
