@@ -1,10 +1,10 @@
 import React from 'react';
-import TextInput from '../components/TextInput';
+import PersonalSummary from '../components/PersonalSummary';
 
 function CVBuilder() {
 
   return (
-    <TextInput />
+    <PersonalSummary />
   )
 }
 
