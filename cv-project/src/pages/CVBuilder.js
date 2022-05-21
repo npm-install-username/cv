@@ -1,10 +1,10 @@
 import React from 'react';
-import PersonalSummary from '../components/PersonalSummary';
+import CVSection from '../components/CVSection';
 
 function CVBuilder() {
 
   return (
-    <PersonalSummary />
+    <CVSection title='Personal Summary' />
   )
 }
 
