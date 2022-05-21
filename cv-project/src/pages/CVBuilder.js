@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
+import TextInput from '../components/TextInput';
 
 function CVBuilder() {
+
   return (
-    <div>CVBuilder</div>
+    <TextInput />
   )
 }
 
