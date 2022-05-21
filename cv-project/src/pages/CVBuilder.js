@@ -1,5 +1,6 @@
 import React from 'react';
 import CVSection from '../components/CVSection';
+import GenerateCV from '../components/GenerateCV';
 
 function CVBuilder() {
 
@@ -11,6 +12,7 @@ function CVBuilder() {
       <CVSection title='Skills' type='text'/>
       <CVSection title='Languages' type='text'/>
       <CVSection title='Interests' type='text'/>
+      <GenerateCV />
     </>
 
     
