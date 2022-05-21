@@ -5,12 +5,12 @@ function CVBuilder() {
 
   return (
     <>    
-      <CVSection title='Personal Summary' />
-      <CVSection title='Education' />
-      <CVSection title='Professional Experience' />
-      <CVSection title='Skills' />
-      <CVSection title='Languages' />
-      <CVSection title='Interests' />
+      <CVSection title='Personal Summary' type='text'/>
+      <CVSection title='Education' type='record'/>
+      <CVSection title='Professional Experience' type='record'/>
+      <CVSection title='Skills' type='text'/>
+      <CVSection title='Languages' type='text'/>
+      <CVSection title='Interests' type='text'/>
     </>
 
     
