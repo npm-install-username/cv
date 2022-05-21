@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
-import Profile from "./components/Profile";
-import CVBuilder from "./components/CVBuilder";
-import Navbar from "./components/Navbar";
+import Profile from "./pages/Profile";
+import CVBuilder from "./pages/CVBuilder";
+import Navbar from "./pages/Navbar";
 
 const RouteSwitch = () => {
   return (
