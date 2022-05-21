@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 $primary: #0369a1;
 $secondary: #0ea5e9;
+$fontstack:'PT Sans', sans-serif;
 
 *{
     margin: 0;
     padding: 0;
+    font-family: $fontstack;
 }
 
 .container{
