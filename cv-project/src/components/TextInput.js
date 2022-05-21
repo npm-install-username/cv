@@ -12,8 +12,9 @@ function TextInput() {
     <>
     <Editor
       onInit={(evt, editor) => editorRef.current = editor}
-      initialValue="<p>Type your </p>"
+      
       init={{
+        placeholder: "Type here...",
         height: 500,
         resize: false,
         menubar: false,
