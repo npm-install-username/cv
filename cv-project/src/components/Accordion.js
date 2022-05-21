@@ -12,7 +12,7 @@ export default function Accordion({title}) {
 
     useEffect(() => {
         console.log(refHeight);
-        setHeightEl(`1000px`)
+        setHeightEl(`600px`)
     }, [])
 
     const toggleState = () => {
