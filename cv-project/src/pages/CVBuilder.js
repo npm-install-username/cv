@@ -6,6 +6,14 @@ import jsPDF from 'jspdf';
 function CVBuilder() {
   const [cvContent, setcvContent] = useState([
     {
+      id:0,
+      name: 'John Doe',
+      jobTitle: 'Accountant',
+      address: '123 Random Street, City, 34S ZC2, Country', 
+      email: 'johndoe@email.com',
+      phoneNum: '07221111111'
+    },
+    {
       id: 1,
       section: 'Personal Statement',
       content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore iste beatae dolores vero nesciunt omnis amet ex voluptatem quis possimus saepe numquam totam eum, eius nam deserunt placeat minus atque!',
@@ -41,12 +49,14 @@ function CVBuilder() {
     
     var doc = new jsPDF('p', 'pt');
     
-    doc.text(20, 20, 'This is the first title.')
+    doc.text(20, 20, cvContent[0].name)
     doc.addFont('helvetica', 'normal')
-    doc.text(20, 60, 'This is the second title.')
-    doc.text(20, 100, 'This is the thrid title.')      
+    doc.text(20, 60, cvContent[0].jobTitle)
+    doc.text(20, 100, cvContent[0].address)
+    doc.text(20, 100, cvContent[0].address)       
     
-    doc.save('demo.pdf')
+    // doc.save('demo.pdf')
+    doc.output('dataurlnewwindow');
     
     console.log(cvContent)
   }
