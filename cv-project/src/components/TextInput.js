@@ -8,6 +8,8 @@ function TextInput(props) {
         console.log(editorRef.current.getContent());
         }
         console.log(value)
+        console.log(props.title)
+        props.updateCVContent(props.content, props.title, value)
     };
     let initialValue = '123123123'
     const [value, setValue] = useState(initialValue ?? '');
@@ -18,6 +20,7 @@ function TextInput(props) {
       initialValue={initialValue}
       value={value}
       onEditorChange={(newValue, editor) => setValue(newValue)}
+      // onChange = {props.updateCVContent}
       init={{
         height: 500,
         resize: false,

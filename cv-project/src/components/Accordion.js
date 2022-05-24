@@ -24,7 +24,7 @@ export default function Accordion(props) {
     const toggleState = () => {
         setToggle(!toggle)
     }
-
+    
     
 
     if(props.type ==='text'){
@@ -46,7 +46,7 @@ export default function Accordion(props) {
                 ref={refHeight}
                 >
                     <p aria-hidden={toggle ? "true" : "false"}>
-                        <TextInput content = {props.cvContent} />
+                        <TextInput content = {props.content} title = {props.title} updateCVContent = {props.updateCVContent}/>
                     </p>
                 </div>
                 

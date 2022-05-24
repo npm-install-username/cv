@@ -7,6 +7,7 @@ function CVBuilder() {
   const [cvContent, setcvContent] = useState([
     {
       id:0,
+      section: 'Personal Information',
       name: 'John Doe',
       jobTitle: 'Accountant',
       address: '123 Random Street, City, 34S ZC2, Country', 
@@ -15,7 +16,7 @@ function CVBuilder() {
     },
     {
       id: 1,
-      section: 'Personal Statement',
+      section: 'Personal Summary',
       content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore iste beatae dolores vero nesciunt omnis amet ex voluptatem quis possimus saepe numquam totam eum, eius nam deserunt placeat minus atque!',
     },
     {
@@ -45,8 +46,14 @@ function CVBuilder() {
     },
   ])
 
-  const updateCVContent = (cvContent, sectionTitle) =>{
-
+  const updateCVContent = (cvContent, sectionTitle, newContent) =>{
+    console.log(cvContent)
+    for (let i = 0; i < cvContent.length; i++) {
+      if (cvContent[i].section === sectionTitle){
+        cvContent[i].content = newContent
+      }
+    }
+    
   }
   const onGenerate = (cvContent) => {
     
