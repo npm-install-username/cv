@@ -45,30 +45,33 @@ function CVBuilder() {
     },
   ])
 
+  const updateCVContent = (cvContent, sectionTitle) =>{
+
+  }
   const onGenerate = (cvContent) => {
     
-    var doc = new jsPDF('p', 'pt');
+    // var doc = new jsPDF('p', 'pt');
     
-    doc.text(20, 20, cvContent[0].name)
-    doc.addFont('helvetica', 'normal')
-    doc.text(20, 60, cvContent[0].jobTitle)
-    doc.text(20, 100, cvContent[0].address)
-    doc.text(20, 100, cvContent[0].address)       
+    // doc.text(20, 20, cvContent[0].name)
+    // doc.addFont('helvetica', 'normal')
+    // doc.text(20, 60, cvContent[0].jobTitle)
+    // doc.text(20, 100, cvContent[0].address)
+    // doc.text(20, 100, cvContent[0].address)       
     
-    // doc.save('demo.pdf')
-    doc.output('dataurlnewwindow');
+    // // doc.save('demo.pdf')
+    // doc.output('dataurlnewwindow');
     
     console.log(cvContent)
   }
 
   return (
     <>    
-      <CVSection title='Personal Summary' type='text' content={cvContent}/>
-      <CVSection title='Education' type='record' content={cvContent}/>
-      <CVSection title='Professional Experience' type='record' content={cvContent}/>
-      <CVSection title='Skills' type='text' content={cvContent}/>
-      <CVSection title='Languages' type='text' content={cvContent}/>
-      <CVSection title='Interests' type='text' content={cvContent}/>
+      <CVSection title='Personal Summary' type='text' content={cvContent} updateCVContent={updateCVContent}/>
+      <CVSection title='Education' type='record' content={cvContent} updateCVContent={updateCVContent}/>
+      <CVSection title='Professional Experience' type='record' content={cvContent} updateCVContent={updateCVContent}/>
+      <CVSection title='Skills' type='text' content={cvContent} updateCVContent={updateCVContent}/>
+      <CVSection title='Languages' type='text' content={cvContent} updateCVContent={updateCVContent}/>
+      <CVSection title='Interests' type='text' content={cvContent} updateCVContent={updateCVContent}/>
       <GenerateCV onGenerate={onGenerate} content={cvContent}/>
     </>
 

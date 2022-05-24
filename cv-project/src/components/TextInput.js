@@ -1,20 +1,24 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 
-function TextInput() {
+function TextInput(props) {
     const editorRef = useRef(null);
     const log = () => {
         if (editorRef.current) {
         console.log(editorRef.current.getContent());
         }
+        console.log(value)
     };
+    let initialValue = '123123123'
+    const [value, setValue] = useState(initialValue ?? '');
+    useEffect(() => setValue(initialValue ?? ''), [initialValue]);
   return (
     <>
     <Editor
-      onInit={(evt, editor) => editorRef.current = editor}
-      
+      initialValue={initialValue}
+      value={value}
+      onEditorChange={(newValue, editor) => setValue(newValue)}
       init={{
-        placeholder: "Type here...",
         height: 500,
         resize: false,
         menubar: false,

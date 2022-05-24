@@ -46,7 +46,7 @@ export default function Accordion(props) {
                 ref={refHeight}
                 >
                     <p aria-hidden={toggle ? "true" : "false"}>
-                        <TextInput />
+                        <TextInput content = {props.cvContent} />
                     </p>
                 </div>
                 
