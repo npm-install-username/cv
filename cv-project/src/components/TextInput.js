@@ -7,9 +7,7 @@ function TextInput(props) {
         if (editorRef.current) {
         console.log(editorRef.current.getContent());
         }
-        console.log(value)
-        console.log(props.title)
-        props.updateCVContent(props.content, props.title, value)
+        props.updateCVContent(props.content, props.title, value, props.type)
     };
     let initialValue = '123123123'
     const [value, setValue] = useState(initialValue ?? '');

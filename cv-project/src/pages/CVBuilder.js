@@ -46,14 +46,19 @@ function CVBuilder() {
     },
   ])
 
-  const updateCVContent = (cvContent, sectionTitle, newContent) =>{
-    console.log(cvContent)
-    for (let i = 0; i < cvContent.length; i++) {
-      if (cvContent[i].section === sectionTitle){
-        cvContent[i].content = newContent
+  // This will only work on function call. Need to include setcvcontent somehow.
+  const updateCVContent = (cvContent, sectionTitle, newContent, type) =>{
+    if (type === "text"){
+      let tempCV = [...cvContent]
+      for (let i = 0; i < tempCV.length; i++) {
+        if (tempCV[i].section === sectionTitle){
+          tempCV[i].content = newContent
+        }
       }
+      console.log(tempCV)
+      setcvContent(tempCV)
     }
-    
+
   }
   const onGenerate = (cvContent) => {
     
