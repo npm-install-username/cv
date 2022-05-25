@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import RecordEntry from './RecordEntry'
 
 function Record(props) {
@@ -9,7 +9,7 @@ function Record(props) {
     // console.log(found)
     let rows = []
     for (let i = 0; i < Object.keys(found.content).length; i++) {
-        rows.push(<RecordEntry entryContent={found.content[i]}/>)
+        rows.push(<RecordEntry entryContent={found.content[i]} title ={props.title}/>)
         console.log(found.content[i])
     }
     // console.log(Object.keys(found.content).length)
