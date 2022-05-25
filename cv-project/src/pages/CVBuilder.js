@@ -11,7 +11,7 @@ import {
 } from 'react-accessible-accordion';
 
 // Demo styles, see 'Styles' section below for some notes on use.
-import 'react-accessible-accordion/dist/fancy-example.css';
+import '../styles/Accordion.scss';
 
 function CVBuilder() {
   const [cvContent, setcvContent] = useState([
@@ -121,8 +121,8 @@ function CVBuilder() {
   return (
     <div className='container'> 
       <Accordion allowZeroExpanded>
-            <AccordionItem>
-                <AccordionItemHeading>
+            <AccordionItem >
+                <AccordionItemHeading >
                     <AccordionItemButton>
                         Personal Summary
                     </AccordionItemButton>
