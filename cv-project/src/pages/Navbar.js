@@ -4,7 +4,7 @@ import '../styles/NavBar.scss'
 function Navbar() {
   return (
     <div className='navbar-background'>
-      <div class="container">
+      <div className="container">
         <ul>
           <li><a href="/">CVBuilder</a></li>
           <li><a href="/profile">Profile</a></li>

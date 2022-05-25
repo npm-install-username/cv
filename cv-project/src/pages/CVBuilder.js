@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import GenerateCV from '../components/GenerateCV';
 //import jsPDF from 'jspdf';
 import TextInput from '../components/TextInput';
+import Record from '../components/Record';
 import {
   Accordion,
   AccordionItem,
@@ -32,8 +33,8 @@ function CVBuilder() {
     {
       id: 2,
       section: 'Education',
-      content: {
-        record1: {
+      content: [
+        {
           place: 'Harvard University',
           startDate: 'June 2012',
           endDate: 'June 2015',
@@ -41,7 +42,7 @@ function CVBuilder() {
           grade: '2:1',
           content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore pariatur sapiente maiores voluptates autem. Itaque accusantium, consequuntur placeat unde numquam suscipit. Quas, maxime culpa distinctio dicta enim officia suscipit.'
         },
-        record2: {
+        {
           place: 'Harvard University',
           startDate: 'June 2012',
           endDate: 'June 2015',
@@ -49,27 +50,27 @@ function CVBuilder() {
           grade: '2:1',
           content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore pariatur sapiente maiores voluptates autem. Itaque accusantium, consequuntur placeat unde numquam suscipit. Quas, maxime culpa distinctio dicta enim officia suscipit.'
         },
-      },
+      ],
     },
     {
       id: 3,
       section: 'Professional Experience',
-      content: {
-        record1: {
+      content: [
+        {
           place: 'Harvard University',
           startDate: 'June 2012',
           endDate: 'June 2015',
           jobTitle: 'Doctor',
           content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore pariatur sapiente maiores voluptates autem. Itaque accusantium, consequuntur placeat unde numquam suscipit. Quas, maxime culpa distinctio dicta enim officia suscipit.'
         },
-        record2: {
+        {
           place: 'Harvard University',
           startDate: 'June 2012',
           endDate: 'June 2015',
           jobTitle: 'Doctor',
           content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore pariatur sapiente maiores voluptates autem. Itaque accusantium, consequuntur placeat unde numquam suscipit. Quas, maxime culpa distinctio dicta enim officia suscipit.'
         },
-      },
+      ],
     },
     {
       id: 4,
@@ -128,9 +129,7 @@ function CVBuilder() {
                     </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                    <p>
                         <TextInput title='Personal Summary' content={cvContent} updateCVContent={updateCVContent} type = 'text'/>
-                    </p>
                 </AccordionItemPanel>
             </AccordionItem>
             <AccordionItem>
@@ -140,11 +139,7 @@ function CVBuilder() {
                     </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                    <p>
-                        In ad velit in ex nostrud dolore cupidatat consectetur
-                        ea in ut nostrud velit in irure cillum tempor laboris
-                        sed adipisicing eu esse duis nulla non.
-                    </p>
+                      <Record title='Education' content={cvContent} updateCVContent={updateCVContent} type = 'record'/>             
                 </AccordionItemPanel>
             </AccordionItem>
             <AccordionItem>
@@ -154,11 +149,7 @@ function CVBuilder() {
                     </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                    <p>
-                        In ad velit in ex nostrud dolore cupidatat consectetur
-                        ea in ut nostrud velit in irure cillum tempor laboris
-                        sed adipisicing eu esse duis nulla non.
-                    </p>
+                      <Record  title='Professional Experience' content={cvContent} updateCVContent={updateCVContent} type = 'record'/>
                 </AccordionItemPanel>
             </AccordionItem>
             <AccordionItem>
@@ -168,9 +159,7 @@ function CVBuilder() {
                     </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                    <p>
-                      <TextInput title='Personal Summary' content={cvContent} updateCVContent={updateCVContent} type = 'text'/>
-                    </p>
+                      <TextInput title='Skills' content={cvContent} updateCVContent={updateCVContent} type = 'text'/>             
                 </AccordionItemPanel>
             </AccordionItem>
             <AccordionItem>
@@ -180,9 +169,7 @@ function CVBuilder() {
                     </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                    <p>
-                      <TextInput title='Personal Summary' content={cvContent} updateCVContent={updateCVContent} type = 'text'/>
-                    </p>
+                      <TextInput title='Languages' content={cvContent} updateCVContent={updateCVContent} type = 'text'/>      
                 </AccordionItemPanel>
             </AccordionItem>
             <AccordionItem>
@@ -192,9 +179,7 @@ function CVBuilder() {
                     </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                    <p>
-                      <TextInput title='Personal Summary' content={cvContent} updateCVContent={updateCVContent} type = 'text'/>.
-                    </p>
+                      <TextInput title='Interests' content={cvContent} updateCVContent={updateCVContent} type = 'text'/>.                 
                 </AccordionItemPanel>
             </AccordionItem>
         </Accordion>   

@@ -4,7 +4,7 @@ import React from 'react';
 function GenerateCV(props) {
 
   return (
-    <div class="container">
+    <div className="container">
       <button onClick={()=> props.onGenerate(props.content)}>Generate CV</button>
     </div>
   )
