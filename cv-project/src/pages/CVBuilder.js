@@ -1,7 +1,17 @@
 import React, { useState } from 'react';
-import CVSection from '../components/CVSection';
 import GenerateCV from '../components/GenerateCV';
 //import jsPDF from 'jspdf';
+import TextInput from '../components/TextInput';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemHeading,
+  AccordionItemButton,
+  AccordionItemPanel,
+} from 'react-accessible-accordion';
+
+// Demo styles, see 'Styles' section below for some notes on use.
+import 'react-accessible-accordion/dist/fancy-example.css';
 
 function CVBuilder() {
   const [cvContent, setcvContent] = useState([
@@ -109,15 +119,87 @@ function CVBuilder() {
   }
 
   return (
-    <>    
-      <CVSection title='Personal Summary' type='text' content={cvContent} updateCVContent={updateCVContent}/>
-      <CVSection title='Education' type='record' content={cvContent} updateCVContent={updateCVContent}/>
-      <CVSection title='Professional Experience' type='record' content={cvContent} updateCVContent={updateCVContent}/>
-      <CVSection title='Skills' type='text' content={cvContent} updateCVContent={updateCVContent}/>
-      <CVSection title='Languages' type='text' content={cvContent} updateCVContent={updateCVContent}/>
-      <CVSection title='Interests' type='text' content={cvContent} updateCVContent={updateCVContent}/>
+    <div className='container'> 
+      <Accordion allowZeroExpanded>
+            <AccordionItem>
+                <AccordionItemHeading>
+                    <AccordionItemButton>
+                        Personal Summary
+                    </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                    <p>
+                        <TextInput title='Personal Summary' content={cvContent} updateCVContent={updateCVContent} type = 'text'/>
+                    </p>
+                </AccordionItemPanel>
+            </AccordionItem>
+            <AccordionItem>
+                <AccordionItemHeading>
+                    <AccordionItemButton>
+                        Education
+                    </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                    <p>
+                        In ad velit in ex nostrud dolore cupidatat consectetur
+                        ea in ut nostrud velit in irure cillum tempor laboris
+                        sed adipisicing eu esse duis nulla non.
+                    </p>
+                </AccordionItemPanel>
+            </AccordionItem>
+            <AccordionItem>
+                <AccordionItemHeading>
+                    <AccordionItemButton>
+                        Professional Experience
+                    </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                    <p>
+                        In ad velit in ex nostrud dolore cupidatat consectetur
+                        ea in ut nostrud velit in irure cillum tempor laboris
+                        sed adipisicing eu esse duis nulla non.
+                    </p>
+                </AccordionItemPanel>
+            </AccordionItem>
+            <AccordionItem>
+                <AccordionItemHeading>
+                    <AccordionItemButton>
+                        Skills
+                    </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                    <p>
+                      <TextInput title='Personal Summary' content={cvContent} updateCVContent={updateCVContent} type = 'text'/>
+                    </p>
+                </AccordionItemPanel>
+            </AccordionItem>
+            <AccordionItem>
+                <AccordionItemHeading>
+                    <AccordionItemButton>
+                        Languages
+                    </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                    <p>
+                      <TextInput title='Personal Summary' content={cvContent} updateCVContent={updateCVContent} type = 'text'/>
+                    </p>
+                </AccordionItemPanel>
+            </AccordionItem>
+            <AccordionItem>
+                <AccordionItemHeading>
+                    <AccordionItemButton>
+                        Interests
+                    </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                    <p>
+                      <TextInput title='Personal Summary' content={cvContent} updateCVContent={updateCVContent} type = 'text'/>.
+                    </p>
+                </AccordionItemPanel>
+            </AccordionItem>
+        </Accordion>   
       <GenerateCV onGenerate={onGenerate} content={cvContent}/>
-    </>
+    </div>
 
     
   )
