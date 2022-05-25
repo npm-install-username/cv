@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CVSection from '../components/CVSection';
 import GenerateCV from '../components/GenerateCV';
-import jsPDF from 'jspdf';
+//import jsPDF from 'jspdf';
 
 function CVBuilder() {
   const [cvContent, setcvContent] = useState([
@@ -22,12 +22,44 @@ function CVBuilder() {
     {
       id: 2,
       section: 'Education',
-      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore iste beatae dolores vero nesciunt omnis amet ex voluptatem quis possimus saepe numquam totam eum, eius nam deserunt placeat minus atque!',
+      content: {
+        record1: {
+          place: 'Harvard University',
+          startDate: 'June 2012',
+          endDate: 'June 2015',
+          degree: 'Medicine',
+          grade: '2:1',
+          content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore pariatur sapiente maiores voluptates autem. Itaque accusantium, consequuntur placeat unde numquam suscipit. Quas, maxime culpa distinctio dicta enim officia suscipit.'
+        },
+        record2: {
+          place: 'Harvard University',
+          startDate: 'June 2012',
+          endDate: 'June 2015',
+          degree: 'Medicine',
+          grade: '2:1',
+          content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore pariatur sapiente maiores voluptates autem. Itaque accusantium, consequuntur placeat unde numquam suscipit. Quas, maxime culpa distinctio dicta enim officia suscipit.'
+        },
+      },
     },
     {
       id: 3,
       section: 'Professional Experience',
-      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore iste beatae dolores vero nesciunt omnis amet ex voluptatem quis possimus saepe numquam totam eum, eius nam deserunt placeat minus atque!',
+      content: {
+        record1: {
+          place: 'Harvard University',
+          startDate: 'June 2012',
+          endDate: 'June 2015',
+          jobTitle: 'Doctor',
+          content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore pariatur sapiente maiores voluptates autem. Itaque accusantium, consequuntur placeat unde numquam suscipit. Quas, maxime culpa distinctio dicta enim officia suscipit.'
+        },
+        record2: {
+          place: 'Harvard University',
+          startDate: 'June 2012',
+          endDate: 'June 2015',
+          jobTitle: 'Doctor',
+          content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore pariatur sapiente maiores voluptates autem. Itaque accusantium, consequuntur placeat unde numquam suscipit. Quas, maxime culpa distinctio dicta enim officia suscipit.'
+        },
+      },
     },
     {
       id: 4,
