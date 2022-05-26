@@ -9,7 +9,7 @@ function RecordEntry(props) {
     if (props.title==='Education') {
         return (
             <div className='record-entry-preview'>
-                <h4>{props.entryContent.place} <FaPen /> <FaTrash/> </h4>
+                <h4>{props.entryContent.place} <FaPen style={{cursor:'pointer'}}/> <FaTrash style={{cursor:'pointer'}}/></h4>
                 <h5>{props.entryContent.startDate} - {props.entryContent.endDate}</h5>
                 <h5>{props.entryContent.degree}</h5>
             </div>
@@ -18,7 +18,7 @@ function RecordEntry(props) {
     if (props.title === 'Professional Experience'){
         return (
             <div className='record-entry-preview'>
-                <h4>{props.entryContent.place}</h4>
+                <h4>{props.entryContent.place} <FaPen style={{cursor:'pointer'}}/><FaTrash style={{cursor:'pointer'}}/></h4>
                 <h5>{props.entryContent.startDate} - {props.entryContent.endDate}</h5>
                 <h5>{props.entryContent.jobTitle}</h5>
             </div>

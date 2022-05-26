@@ -6,5 +6,8 @@
     margin: 15px 0;
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 0 0 5px 0 black ;
+    box-shadow: 0 0 7px 0 rgb(83, 82, 82) ;
+    &:hover{
+        background-color:  $secondary
+    }
 }
