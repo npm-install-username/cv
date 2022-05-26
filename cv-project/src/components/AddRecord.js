@@ -1,4 +1,6 @@
 import React from 'react'
+import '../styles/buttons.scss'
+import { FaPlusCircle } from 'react-icons/fa';
 
 function AddRecord(props) {
     let dummyData = {
@@ -12,7 +14,7 @@ function AddRecord(props) {
         props.updateCVContent(props.content,props.title,dummyData,props.type)
     }
   return (
-    <button onClick={addRecord}>Add</button>
+    <button className='add-record-btn' onClick={addRecord}><FaPlusCircle size={20} /></button>
   )
 }
 

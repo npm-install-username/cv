@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaTrash, FaPen } from 'react-icons/fa';
 
 function RecordEntry(props) {
     
