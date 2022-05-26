@@ -1,7 +1,7 @@
 import React from 'react'
 
 function RecordEntry(props) {
-    console.log(props.entryContent)
+    
 
     if (props.title==='Education') {
         return (

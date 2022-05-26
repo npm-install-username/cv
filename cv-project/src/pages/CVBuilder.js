@@ -70,6 +70,13 @@ function CVBuilder() {
           jobTitle: 'Doctor',
           content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore pariatur sapiente maiores voluptates autem. Itaque accusantium, consequuntur placeat unde numquam suscipit. Quas, maxime culpa distinctio dicta enim officia suscipit.'
         },
+        {
+          place: 'Harvard University',
+          startDate: 'June 2012',
+          endDate: 'June 2015',
+          jobTitle: 'Doctor',
+          content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore pariatur sapiente maiores voluptates autem. Itaque accusantium, consequuntur placeat unde numquam suscipit. Quas, maxime culpa distinctio dicta enim officia suscipit.'
+        },
       ],
     },
     {
@@ -89,20 +96,28 @@ function CVBuilder() {
     },
   ])
 
-  // This will only work on function call. Need to include setcvcontent somehow.
   const updateCVContent = (cvContent, sectionTitle, newContent, type) =>{
-    if (type === "text"){
-      let tempCV = [...cvContent]
+    let tempCV = [...cvContent]
+    if (type === "text"){ 
       for (let i = 0; i < tempCV.length; i++) {
         if (tempCV[i].section === sectionTitle){
           tempCV[i].content = newContent
         }
       }
-      console.log(tempCV)
       setcvContent(tempCV)
     }
-
+    if (type === "record"){
+      for (let i = 0; i < tempCV.length; i++) {
+        if (tempCV[i].section === sectionTitle){
+          tempCV[i].content.push(newContent)
+        }
+      }
+      setcvContent(tempCV)
+    }
+    console.log(cvContent)
   }
+
+
   const onGenerate = (cvContent) => {
     
     // var doc = new jsPDF('p', 'pt');
