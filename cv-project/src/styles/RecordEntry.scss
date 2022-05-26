@@ -1,0 +1,10 @@
+@import 'config';
+
+.record-entry-preview{
+    background-color: $primary;
+    color: white;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 black ;
+}
