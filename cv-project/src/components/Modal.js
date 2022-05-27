@@ -2,6 +2,7 @@ import React from 'react'
 import '../styles/Modal.scss'
 import { RiCloseLine } from "react-icons/ri";
 import TextInput from './TextInput';
+import '../styles/TextInput.scss'
 
 function Modal(props) {
 
@@ -41,7 +42,9 @@ function Modal(props) {
                         <label htmlFor="endDate">End Date</label>
                         <input type="text" title='endDate'/>
                     </div>
-                    <TextInput />
+                    <div className="text-field">
+                        <TextInput />
+                    </div>
                 </form>
             </div>
             <div className="modalActions">
