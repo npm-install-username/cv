@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useState} from 'react'
 import '../styles/buttons.scss'
 import { FaPlusCircle } from 'react-icons/fa';
+import Modal from './Modal';
 
 function AddRecord(props) {
     let dummyData = {
@@ -13,8 +14,13 @@ function AddRecord(props) {
     const addRecord = () =>{
         props.updateCVContent(props.content,props.title,dummyData,props.type)
     }
+    const [isOpen, setIsOpen] = useState(false);
   return (
-    <button className='add-record-btn' onClick={addRecord}><FaPlusCircle size={20} /></button>
+    <>    
+      <button className='add-record-btn' onClick={() => setIsOpen(true)}><FaPlusCircle size={20} /></button>
+      {isOpen && <Modal setIsOpen={setIsOpen} />}
+    </>
+
   )
 }
 
