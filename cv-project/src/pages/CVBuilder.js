@@ -11,8 +11,7 @@ import {
   AccordionItemPanel,
 } from 'react-accessible-accordion';
 
-// Demo styles, see 'Styles' section below for some notes on use.
-import '../styles/Accordion.scss';
+import '../styles/CVBuilder.scss';
 
 function CVBuilder() {
   const [cvContent, setcvContent] = useState([

@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import '../styles/buttons.scss'
 import { FaPlusCircle } from 'react-icons/fa';
 import Modal from './Modal';
 

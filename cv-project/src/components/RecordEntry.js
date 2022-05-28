@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/RecordEntry.scss'
+
 import { FaTrash, FaPen } from 'react-icons/fa';
 
 

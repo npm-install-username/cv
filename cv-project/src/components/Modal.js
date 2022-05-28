@@ -1,8 +1,8 @@
 import React from 'react'
-import '../styles/Modal.scss'
+
 import { RiCloseLine } from "react-icons/ri";
 import TextInput from './TextInput';
-import '../styles/TextInput.scss'
+
 
 function Modal(props) {
 
