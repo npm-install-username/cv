@@ -17,7 +17,7 @@ function AddRecord(props) {
   return (
     <>    
       <button className='add-record-btn' onClick={() => setIsOpen(true)}><FaPlusCircle size={20} /></button>
-      {isOpen && <Modal setIsOpen={setIsOpen} title={props.title}/>}
+      {isOpen && <Modal setIsOpen={setIsOpen} title={props.title} updateCVContent = {props.updateCVContent} content = {props.content} type={props.type}/>}
     </>
 
   )

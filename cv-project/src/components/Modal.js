@@ -7,7 +7,29 @@ import TextInput from './TextInput';
 function Modal(props) {
     const handleSubmit = (e) =>{
         e.preventDefault();
-        console.log(place)
+        let entry = ''
+        if (props.title==='Education'){
+            entry = {
+                place: place,
+                startDate: startDate,
+                endDate: endDate,
+                degree: degree,
+                grade: grade,
+                content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore pariatur sapiente maiores voluptates autem. Itaque accusantium, consequuntur placeat unde numquam suscipit. Quas, maxime culpa distinctio dicta enim officia suscipit.'
+            }
+        }
+        if (props.title==='Professional Experience'){
+            entry = {
+                place: place,
+                startDate: startDate,
+                endDate: endDate,
+                jobTitle:jobTitle,
+                content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore pariatur sapiente maiores voluptates autem. Itaque accusantium, consequuntur placeat unde numquam suscipit. Quas, maxime culpa distinctio dicta enim officia suscipit.'
+            }
+        }
+        console.log(entry)
+        props.updateCVContent(props.content,props.title,entry,props.type)
+
         
     }
     const [place,setPlace] = useState('')
