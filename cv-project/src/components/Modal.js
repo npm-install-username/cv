@@ -49,8 +49,8 @@ function Modal(props) {
                     </div>
                     <div className="modalActions">
                     <div className="actionsContainer">
-                        <button className="deleteBtn" onClick={() => props.setIsOpen(false)}>
-                        Delete
+                        <button className="addBtn" onClick={() => props.setIsOpen(false)}>
+                        Add Record
                         </button>
                         <button
                         className="cancelBtn"
