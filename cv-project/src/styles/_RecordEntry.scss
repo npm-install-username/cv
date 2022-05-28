@@ -1,4 +1,4 @@
-
+@import 'config';
 
 .record-entry-preview{
     background-color: $primary;
@@ -6,8 +6,12 @@
     margin: 15px 0;
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 0 0 7px 0 rgb(83, 82, 82) ;
+    
     &:hover{
-        background-color:  $secondary
+        box-shadow: 0 10px 20px -10px $primary;
+        transform: translateY(-5px);
+        cursor: pointer;
+        background-color: scale-color($color: $primary, $lightness: 0%);
+        
     }
 }
