@@ -12,6 +12,9 @@ import {
 } from 'react-accessible-accordion';
 
 import '../styles/CVBuilder.scss';
+import {addDoc, collection} from 'firebase/firestore'
+import { db, auth } from '../firebase-config';
+import SaveCV from '../components/SaveCV';
 
 function CVBuilder() {
   const [cvContent, setcvContent] = useState([
@@ -116,6 +119,15 @@ function CVBuilder() {
     console.log(cvContent)
   }
 
+  // Define collection refernce
+  const cvCollectionRef = collection(db, "cv")
+  const saveCV = async () => {
+
+    //addDoc requires specific collection
+    await addDoc(cvCollectionRef, {cvContent:cvContent,
+    userid: auth.currentUser.uid})
+  }
+
 
   const onGenerate = (cvContent) => {
     
@@ -198,6 +210,7 @@ function CVBuilder() {
             </AccordionItem>
         </Accordion>   
       <GenerateCV onGenerate={onGenerate} content={cvContent}/>
+      <SaveCV saveCV={saveCV}/>
     </div>
 
     
