@@ -7,8 +7,8 @@ function Record(props) {
     const found = props.content.find(obj =>{
         return obj.section === props.title
     })
-    // console.log(found)
-    console.log(Object.keys(found.content).length)
+    // // console.log(found)
+    // console.log(Object.keys(found.content).length)
     let rows = []
     for (let i = 0; i < Object.keys(found.content).length; i++) {
         rows.push(<RecordEntry entryContent={found.content[i]} title ={props.title} />)
