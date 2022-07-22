@@ -7,29 +7,21 @@ import TextInput from './TextInput';
 function Modal(props) {
     const handleSubmit = (e) =>{
         e.preventDefault();
-        let entry = ''
+        let entry = {
+            // +1 because records length will become 1 longer after updating this (records length only goes up by 1 after adding)
+            key: props.recordsLength + 1,
+            place: place,
+            startDate: startDate,
+            endDate: endDate,
+            content: textField,
+        }
         if (props.title==='Education'){
-            entry = {
-                // +1 because records length will become 1 longer after updating this (records length only goes up by 1 after adding)
-                key: props.recordsLength + 1,
-                place: place,
-                startDate: startDate,
-                endDate: endDate,
-                degree: degree,
-                grade: grade,
-                content: textField,
-            }
+            entry.degree = degree
+            entry.grade = grade
+
         }
         if (props.title==='Professional Experience'){
-            entry = {
-                // +1 because records length will become 1 longer after updating this (records length only goes up by 1 after adding)
-                key: props.recordsLength+1,
-                place: place,
-                startDate: startDate,
-                endDate: endDate,
-                jobTitle:jobTitle,
-                content: textField
-            }
+            entry.jobTitle = jobTitle
         }
         console.log(entry)
         props.updateCVContent(props.content,props.title,entry,props.type)
