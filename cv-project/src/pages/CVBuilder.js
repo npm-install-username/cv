@@ -157,7 +157,7 @@ function CVBuilder() {
                     </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                        <TextInput title='Personal Summary' content={cvContent} updateCVContent={updateCVContent} type = 'text'  />
+                        <TextInput title='Personal Summary' content={cvContent} updateCVContent={updateCVContent} type = 'text' />
                 </AccordionItemPanel>
             </AccordionItem>
             <AccordionItem>
