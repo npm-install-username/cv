@@ -33,7 +33,7 @@ function Modal(props) {
         }
         console.log(entry)
         props.updateCVContent(props.content,props.title,entry,props.type)
-
+        props.setIsOpen(false)
         
     }
     const [place,setPlace] = useState('')
