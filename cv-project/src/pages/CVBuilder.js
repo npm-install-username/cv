@@ -37,6 +37,7 @@ function CVBuilder() {
       section: 'Education',
       content: [
         {
+          key:1,
           place: 'Harvard University',
           startDate: 'June 2012',
           endDate: 'June 2015',
@@ -44,7 +45,8 @@ function CVBuilder() {
           grade: '2:1',
           content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore pariatur sapiente maiores voluptates autem. Itaque accusantium, consequuntur placeat unde numquam suscipit. Quas, maxime culpa distinctio dicta enim officia suscipit.'
         },
-        {
+        { 
+          key:2,
           place: 'Harvard University',
           startDate: 'June 2012',
           endDate: 'June 2015',
@@ -58,27 +60,22 @@ function CVBuilder() {
       id: 3,
       section: 'Professional Experience',
       content: [
-        {
+        { 
+          key:1,
           place: 'Harvard University',
           startDate: 'June 2012',
           endDate: 'June 2015',
           jobTitle: 'Doctor',
           content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore pariatur sapiente maiores voluptates autem. Itaque accusantium, consequuntur placeat unde numquam suscipit. Quas, maxime culpa distinctio dicta enim officia suscipit.'
         },
-        {
+        { 
+          key:2,
           place: 'Harvard University',
           startDate: 'June 2012',
           endDate: 'June 2015',
           jobTitle: 'Doctor',
           content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore pariatur sapiente maiores voluptates autem. Itaque accusantium, consequuntur placeat unde numquam suscipit. Quas, maxime culpa distinctio dicta enim officia suscipit.'
-        },
-        {
-          place: 'Harvard University',
-          startDate: 'June 2012',
-          endDate: 'June 2015',
-          jobTitle: 'Doctor',
-          content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore pariatur sapiente maiores voluptates autem. Itaque accusantium, consequuntur placeat unde numquam suscipit. Quas, maxime culpa distinctio dicta enim officia suscipit.'
-        },
+        }
       ],
     },
     {

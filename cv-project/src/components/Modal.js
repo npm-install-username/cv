@@ -10,21 +10,25 @@ function Modal(props) {
         let entry = ''
         if (props.title==='Education'){
             entry = {
+                // +1 because records length will become 1 longer after updating this (records length only goes up by 1 after adding)
+                key: props.recordsLength + 1,
                 place: place,
                 startDate: startDate,
                 endDate: endDate,
                 degree: degree,
                 grade: grade,
-                content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore pariatur sapiente maiores voluptates autem. Itaque accusantium, consequuntur placeat unde numquam suscipit. Quas, maxime culpa distinctio dicta enim officia suscipit.'
+                content: textField,
             }
         }
         if (props.title==='Professional Experience'){
             entry = {
+                // +1 because records length will become 1 longer after updating this (records length only goes up by 1 after adding)
+                key: props.recordsLength+1,
                 place: place,
                 startDate: startDate,
                 endDate: endDate,
                 jobTitle:jobTitle,
-                content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore pariatur sapiente maiores voluptates autem. Itaque accusantium, consequuntur placeat unde numquam suscipit. Quas, maxime culpa distinctio dicta enim officia suscipit.'
+                content: textField
             }
         }
         console.log(entry)
@@ -38,6 +42,7 @@ function Modal(props) {
     const [grade, setGrade] = useState('')
     const [startDate,setStartDate] = useState('')
     const [endDate,setEndDate] = useState('')
+    const [textField, setTextField] = useState('')
 
   return (
     <>
@@ -73,10 +78,10 @@ function Modal(props) {
                                 <label htmlFor="startDate" >Start Date</label>
                                 <input type="text" title='startDate' name='startDate' required value={startDate} onChange={(e) => setStartDate(e.target.value)}/>
                                 <label htmlFor="endDate">End Date</label>
-                                <input type="text" title='endDate'name='endDate'required value={endDate} onChange={(e) => setEndDate(e.target.value)}/>
+                                <input type="text" title='endDate'name='endDate' required value={endDate} onChange={(e) => setEndDate(e.target.value)}/>
                             </div>
                             <div className="text-field">
-                                <TextInput />
+                                <TextInput  title={props.title} content={props.content} updateCVContent={props.updateCVContent} type = 'record' setTextField={setTextField} />
                             </div>
                                 <div className="modalActions">
                                 <div className="actionsContainer">
