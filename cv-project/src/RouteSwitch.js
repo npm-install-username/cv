@@ -8,6 +8,7 @@ import { onAuthStateChanged} from "firebase/auth";
 import { auth } from "./firebase-config";
 import Register from "./pages/Register";
 import Login from "./pages/Login"
+import Docs from "./pages/Docs";
 
 const RouteSwitch = () => {
   const [user, setUser] = useState({});
@@ -22,7 +23,7 @@ const RouteSwitch = () => {
     <BrowserRouter>
     <Navbar user={user}/>
       <Routes>
-        <Route path="/" element={<App />} />
+        {user? <Route path="/docs" element={<Docs />} /> :<Route path="/" element={<App />} />}
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         {user ? <Route path="/profile" element={<Profile />} /> : <Route path="/profile" element={<Navigate to='/' />} /> }
