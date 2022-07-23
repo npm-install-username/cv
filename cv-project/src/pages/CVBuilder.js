@@ -12,8 +12,8 @@ import {
 } from 'react-accessible-accordion';
 
 import '../styles/CVBuilder.scss';
-import {addDoc, collection} from 'firebase/firestore'
-import { db, auth } from '../firebase-config';
+import {addDoc} from 'firebase/firestore'
+import {auth, cvCollectionRef } from '../firebase-config';
 import SaveCV from '../components/SaveCV';
 
 function CVBuilder() {
@@ -118,8 +118,6 @@ function CVBuilder() {
     console.log(cvContent)
   }
 
-  // Define collection refernce
-  const cvCollectionRef = collection(db, "cv")
   const saveCV = async () => {
 
     //addDoc requires specific collection

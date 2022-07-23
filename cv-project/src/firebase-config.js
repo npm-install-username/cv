@@ -4,7 +4,7 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 import {getAuth} from 'firebase/auth';
-import {getFirestore} from 'firebase/firestore'
+import {getFirestore, collection} from 'firebase/firestore'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -24,3 +24,5 @@ const app = initializeApp(firebaseConfig);
 //Export auth so we can use in other files
 export const auth = getAuth(app);
 export const db =getFirestore(app)
+ // Define collection refernce
+export const cvCollectionRef = collection(db, "cv")
