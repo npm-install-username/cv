@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import {getDocs, query, where}from 'firebase/firestore'
 import {auth, cvCollectionRef } from '../firebase-config';
+import RecordEntry from '../components/RecordEntry';
+import Bounce from "react-activity/dist/Bounce";
+import "react-activity/dist/Bounce.css";
 
 
 
@@ -11,10 +14,12 @@ function Docs(props) {
     
 
     const [userDocs,setUserDocs] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
 
     useEffect(()=>{
       if(auth.currentUser){
+        
         const getQuerySnapshot = async () =>{ 
           const q = query(cvCollectionRef,where("userid","==",auth.currentUser.uid))
           const querySnapshot = await getDocs(q);
@@ -22,24 +27,22 @@ function Docs(props) {
           let i =0
           querySnapshot.forEach((doc) => {
               output[i] = {
-                docId :doc.id,
+                docID :doc.id,
                 data :doc.data()
               }
               i = i +1
           });
           console.log(output)
-          setUserDocs(output)
-          console.log(userDocs)
           return output
-        } 
-        
-        
+        }
         getQuerySnapshot().then((data)=>{
+          console.log("t")
           setUserDocs(data)
           console.log(userDocs)
         })
-        
-
+        if(userDocs!=null){
+          setIsLoading(false)
+        }
       }        
       else {
         console.log("not logged in")
@@ -49,18 +52,20 @@ function Docs(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[auth.currentUser])
 
-    
-  return (
-    <div>
+  
+    return (
       
-      {userDocs.map((cv) =>(
-        <div>
-          <h1>cv title</h1>
-          <h2>cv content</h2>
-        </div>
-      ))}
-    </div>
-  )
+      <div>
+        {isLoading && <Bounce />}
+        {userDocs.map((cv) =>(
+          <div>
+            {<RecordEntry title={'software'} docID={cv.docID} content={cv.data.cvContent}/>}
+          </div>
+        ))}
+      </div>
+    )
+  
+
 }
 
 export default Docs

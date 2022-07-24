@@ -24,10 +24,11 @@ function RecordEntry(props) {
             </div>
           )
     }
-    if (props.docid!=null) {
+    if (props.docID!=null) {
         return (
             <div className='record-entry-preview'>
                 <h4>{props.title} </h4>
+                <h3>{props.content[0].jobTitle}</h3>
             </div>
         )
     }
