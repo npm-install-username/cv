@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 function Record(props) {
 
-    const [found, setFound2] = useState(props.content.find(obj =>{
+    const [found, setFound] = useState(props.content.find(obj =>{
       return obj.section === props.title
     }))
   
@@ -21,7 +21,7 @@ function Record(props) {
       const finder = props.content.find(obj =>{
         return obj.section === props.title
       })
-      setFound2(finder)
+      setFound(finder)
       setRecordsLength(Object.keys(found.content).length)
       
     },[props.content, props.title, found])

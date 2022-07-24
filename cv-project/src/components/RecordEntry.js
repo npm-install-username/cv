@@ -24,6 +24,13 @@ function RecordEntry(props) {
             </div>
           )
     }
+    if (props.docid!=null) {
+        return (
+            <div className='record-entry-preview'>
+                <h4>{props.title} </h4>
+            </div>
+        )
+    }
 
 }
 
