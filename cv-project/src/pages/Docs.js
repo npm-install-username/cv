@@ -21,8 +21,6 @@ function Docs(props) {
           let output = []
           let i =0
           querySnapshot.forEach((doc) => {
-              // doc.data() is never undefined for query doc snapshots
-              //console.log(doc.id, " => ", doc.data());
               output[i] = {
                 docId :doc.id,
                 data :doc.data()
@@ -47,6 +45,8 @@ function Docs(props) {
         console.log("not logged in")
       }
 
+      //eslint was giving warning message saying userdocs should be dependency but that was cauing infite loop so I disabled the messaege for this line
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[auth.currentUser])
 
     
