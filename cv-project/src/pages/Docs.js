@@ -4,6 +4,7 @@ import {auth, cvCollectionRef } from '../firebase-config';
 import RecordEntry from '../components/RecordEntry';
 import Bounce from "react-activity/dist/Bounce";
 import "react-activity/dist/Bounce.css";
+import '../styles/Docs.scss'
 
 
 
@@ -15,6 +16,9 @@ function Docs(props) {
 
     const [userDocs,setUserDocs] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    
+    
+
 
 
     useEffect(()=>{
@@ -55,7 +59,7 @@ function Docs(props) {
   
     return (
       
-      <div>
+      <div className='container'>
         {isLoading && <Bounce />}
         {userDocs.map((cv) =>(
           <div>
